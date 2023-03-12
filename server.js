@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
 
 	socket.on('addTask', ({ task, id }) => {
 		tasks.push({ task, id });
-		socket.broadcast.emit('addTask', { task, id });
+		socket.broadcast.emit('returnTask', { task, id });
 	});
 
 	socket.on('removeTask', (id) => {
